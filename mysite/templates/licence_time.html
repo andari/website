@@ -1,0 +1,14 @@
+<html>
+<head><title>Keolis AB Stockholm, Sweden</title></head>
+<body>
+
+<!--<p>Driving Licence Number: {{ name }}	Time stamp: {{ actual_time }} </p> -->
+
+<ul>
+{%for getdata in getdata %}
+<li>Driving Licence Number: {{name}}		Time stamp: {{ actual_time }} </li>
+{%endfor%}
+</ul>
+<!--<p>Driving Licence Number: {{ getdata }}	Time stamp: {{ scan_time }} </p> -->
+</body>
+</html>
