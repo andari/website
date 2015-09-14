@@ -40,23 +40,32 @@ def licence(request):
 		#name = HttpRequest.body
 		name = HttpRequest.readline(request)
 		pc_time = datetime.datetime.now()
-		#print name
-		#licence_model.objects.all()
-		p = licence_model(licence_number = name)
-		p.save()
-		print p
-		q = licence_model(scan_time = pc_time )
-		q.save()
-		print q
+		l = licence_model(number = name, timestamp = pc_time)
+		l.save()
+		#p = licence_model.objects.all()
+		#p.delete()
+		#p.save()
+		l.delete
+		#print p.number
+		#stamp = p.timestamp
+		#print q
+		#print licence_model.objects.all()
 		#return HttpResponse(html)
-		return render_to_response('licence_time.html', locals())
+		return render_to_response('licence_post.html', locals())
+		#licence_model.delete()
+		#l.delete()
 	elif request.method == 'GET':
 		#html = "<html><body>testing the GET</body></html>"
 		#getdata = licence_model.objects.all()
-		getdata = licence_model.objects.all()
-		actual_time = licence_model.objects.all()
+		list = licence_model.objects.all()
+		#getstamp = list.order_by("timestamp")
+		#getno = list.order_by("timestamp")
+		#list.delete()
+		#print licence_model.objects.all()[0]
+		#actual_time = l.timestamp
 		#name = request.GET.get('datasent', None)
 		#html = "<html><body> %s</body></html>" % name
 	#return HttpResponse(html)
-		return render_to_response('licence_time.html', locals())
-		getdata.delete()	
+		#list.delete()
+		#print 'eimai'
+		return render_to_response('licence_time.html', locals())	
