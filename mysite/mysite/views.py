@@ -6,6 +6,8 @@ from django.shortcuts import render_to_response
 from django.template.defaulttags import csrf_token
 from django.views.decorators.csrf import csrf_exempt
 from licence.models import licence_model
+l = licence_model.objects.all()
+l.delete()
 
 """"def current_datetime(request):
 	now = datetime.datetime.now()
