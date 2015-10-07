@@ -3,11 +3,15 @@
 <body>
 <p> KEOLIS AB </p>
 <p> Driver Identification System </p>
-<ul>
+<p>
+<ol type = "1">
 {% for list in list %}
+	
     <li>Driving Licence Number: {{ list.number 	 }}	Time stamp: {{ list.timestamp }}</li>
+	
 {% endfor %}
-</ul>
+</ol>
+</p>
 
 
 </body>
